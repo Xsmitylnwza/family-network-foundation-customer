@@ -13,6 +13,7 @@ function Objective({ index, title, description }: Props) {
       flexDirection='column'
       alignItems='center'
       justifyContent='center'
+      px={2}
     >
       <Box
         bgcolor='secondary.main'

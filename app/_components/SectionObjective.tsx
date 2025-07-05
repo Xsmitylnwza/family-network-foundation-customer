@@ -1,6 +1,6 @@
 import { Grid2 as Grid, Typography } from '@mui/material';
-import Objective from './Objective';
 import { GRADIENT_BG } from '../theme';
+import AnimationSlidePagination from './AnimationSlidePagination';
 
 export default function SectionObjective() {
   return (
@@ -31,23 +31,7 @@ export default function SectionObjective() {
           ที่มุ่งสร้างครอบครัวอบอุ่น เด็กมีคุณภาพ <br />
           และสังคมที่ไม่ทอดทิ้งกัน
         </Typography>
-        <Grid container spacing={4}>
-          <Objective
-            index={1}
-            title='สร้างครอบครัวอบอุ่น'
-            description='สนับสนุนส่งเสริมบทบาทของพ่อแม่ และครอบครัวเข้ามามีส่วนร่วม ในการสร้างสรรค์กระบวนการเรียนรู้ ตลอดจนร่วมจัดการศึกษาให้แก่ลูกและเด็ก'
-          />
-          <Objective
-            index={2}
-            title='สร้างครอบครัวอบอุ่น'
-            description='สนับสนุนส่งเสริมบทบาทของพ่อแม่ และครอบครัวเข้ามามีส่วนร่วม ในการสร้างสรรค์กระบวนการเรียนรู้ ตลอดจนร่วมจัดการศึกษาให้แก่ลูกและเด็ก'
-          />
-          <Objective
-            index={3}
-            title='สร้างครอบครัวอบอุ่น'
-            description='สนับสนุนส่งเสริมบทบาทของพ่อแม่ และครอบครัวเข้ามามีส่วนร่วม ในการสร้างสรรค์กระบวนการเรียนรู้ ตลอดจนร่วมจัดการศึกษาให้แก่ลูกและเด็ก'
-          />
-        </Grid>
+        <AnimationSlidePagination />
       </Grid>
     </Grid>
   );

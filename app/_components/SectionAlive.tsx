@@ -1,6 +1,6 @@
 import { Box, Grid2 as Grid, Typography } from '@mui/material';
 
-import AliveLogo from './AliveLogo';
+import AnimationSlideAuto from './AnimationSlideAuto';
 
 export default function SectionAlive() {
   return (
@@ -22,17 +22,7 @@ export default function SectionAlive() {
             เราภูมิใจที่ได้ร่วมงานกับพันธมิตรที่หลากหลายซึ่งมีจุดมุ่งหมายเดียวกันนั่นคือการเสริมสร้างความเข้มแข็งให้
             กับครอบครัว และยกระดับคุณภาพชีวิตของเด็กและเยาวชนในสังคมไทย
           </Typography>
-          <Box
-            display='flex'
-            alignItems='center'
-            gap={2}
-            width='100%'
-            overflow='auto'
-          >
-            {Array.from({ length: 20 }).map((_, index) => (
-              <AliveLogo key={index} />
-            ))}
-          </Box>
+          <AnimationSlideAuto />
         </Box>
       </Grid>
     </Grid>
