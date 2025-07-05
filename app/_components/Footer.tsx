@@ -1,10 +1,12 @@
 import { Box, Grid2 as Grid, IconButton, Typography } from '@mui/material';
 import { GRADIENT_BG } from '../theme';
 import Image from 'next/image';
-import tiktokIcon from '@/public/icon/tiktok.svg';
-import facebookIcon from '@/public/icon/facebook.svg';
-import youtubeIcon from '@/public/icon/youtube.svg';
-import mailIcon from '@/public/icon/mail.svg';
+
+import {
+  CONTACT_INFO,
+  LOCATION_INFO,
+  SOCIAL_LINKS,
+} from '@/app/const/constants';
 
 export default function Footer() {
   return (
@@ -24,20 +26,19 @@ export default function Footer() {
           มูลนิธิเครือข่ายครอบครัว
         </Typography>
         <Grid container size={12}>
-          <IconButton>
-            <Image src={facebookIcon.src} alt='tiktok' width={24} height={24} />
-          </IconButton>
-          <IconButton>
-            <Image src={youtubeIcon.src} alt='tiktok' width={24} height={24} />
-          </IconButton>
-          <IconButton>
-            <Image src={tiktokIcon.src} alt='tiktok' width={24} height={24} />
-          </IconButton>
+          {SOCIAL_LINKS.map((link) => (
+            <IconButton key={link.href}>
+              <Image
+                src={link.icon.src}
+                alt={link.title}
+                width={24}
+                height={24}
+              />
+            </IconButton>
+          ))}
         </Grid>
         <Typography variant='subtitle2' gutterBottom>
-          77/47  ซอยแจ้งวัฒนะ 15 แยก 2 แขวงทุ่งสองห้อง เขตหลักสี่ กรุงเทพมหานคร
-          <br />
-          10220
+          {LOCATION_INFO}
         </Typography>
         <Grid container>
           <Grid size={12}>
@@ -47,10 +48,17 @@ export default function Footer() {
           </Grid>
           <Grid size={12}>
             <Box display='flex' alignItems='center' gap={2}>
-              <Image src={mailIcon.src} alt='mail' width={24} height={24} />
-              <Typography variant='subtitle2'>
-                familynetwork2568@gmail.com
-              </Typography>
+              {CONTACT_INFO.map((info) => (
+                <Box key={info.href} display='flex' alignItems='center' gap={2}>
+                  <Image
+                    src={info.icon.src}
+                    alt={info.title}
+                    width={24}
+                    height={24}
+                  />
+                  <Typography variant='subtitle2'>{info.title}</Typography>
+                </Box>
+              ))}
             </Box>
           </Grid>
         </Grid>

@@ -24,7 +24,7 @@ export default function CardActivity() {
         />
       </Box>
       <CardContent>
-        <Typography gutterBottom variant='h5' component='div'>
+        <Typography gutterBottom variant='h6' component='div'>
           หัวข้อกิจกรรมเด่น
         </Typography>
         <Typography variant='body2' sx={{ color: 'text.secondary' }}>

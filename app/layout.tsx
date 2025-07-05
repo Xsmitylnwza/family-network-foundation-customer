@@ -3,6 +3,10 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from '@/app/theme';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { Metadata } from 'next';
+import Footer from './_components/Footer';
+import { Grid2 as Grid } from '@mui/material';
+import Navbar from './_components/Navbar';
+import HeaderBar from './_components/HeaderBar';
 
 const notoSansThai = Noto_Sans_Thai({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -28,7 +32,16 @@ export default function RootLayout({ children }: Props) {
     <html lang='en'>
       <body style={{ margin: 0 }} className={`${notoSansThai.variable}`}>
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeProvider theme={theme}>
+            <Grid container>
+              <Grid size={12}>
+                <HeaderBar />
+                <Navbar />
+                {children}
+                <Footer />
+              </Grid>
+            </Grid>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

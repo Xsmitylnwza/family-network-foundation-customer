@@ -105,6 +105,7 @@ export const useSwipeablePages = ({
     return () => {
       window.removeEventListener('mouseup', handleMouseUpGlobal);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
