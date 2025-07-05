@@ -72,7 +72,7 @@ export default function BoxSlide() {
                 flex: 'none',
               }}
             >
-              <Typography variant='h6' whiteSpace='pre-line'>
+              <Typography variant='h5' whiteSpace='pre-line'>
                 {slide.title}
               </Typography>
               <Typography variant='body2' mt={2}>

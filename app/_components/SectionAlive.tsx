@@ -14,7 +14,7 @@ export default function SectionAlive() {
         justifyContent='space-between'
         size={12}
       >
-        <Typography variant='h6' fontWeight={700} gutterBottom>
+        <Typography variant='h5' fontWeight={700} gutterBottom>
           “รวมพลังองค์กร สร้างสรรค์เพื่อครอบครัว ไทย”
         </Typography>
         <Box display='flex' flexDirection='column' gap={2}>

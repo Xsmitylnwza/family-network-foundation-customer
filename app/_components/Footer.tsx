@@ -22,7 +22,7 @@ export default function Footer() {
         gap={2}
         size={12}
       >
-        <Typography variant='h6' fontWeight={700} gutterBottom>
+        <Typography variant='h5' fontWeight={700} gutterBottom>
           มูลนิธิเครือข่ายครอบครัว
         </Typography>
         <Grid container size={12}>
@@ -42,7 +42,7 @@ export default function Footer() {
         </Typography>
         <Grid container>
           <Grid size={12}>
-            <Typography variant='h6' fontWeight={700} gutterBottom>
+            <Typography variant='h5' fontWeight={700} gutterBottom>
               ข้อมูลติดต่อ
             </Typography>
           </Grid>

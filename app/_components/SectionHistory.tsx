@@ -67,7 +67,7 @@ export default function SectionHistory() {
             </Box>
           </Grid>
         </Grid>
-        <Typography variant='h6' fontWeight={700} gutterBottom>
+        <Typography variant='h5' fontWeight={700} gutterBottom>
           &quot;ยึดมั่นในจุดเริ่มต้น
           <br />
           ก้าวต่อเพื่อครอบครัวไทย

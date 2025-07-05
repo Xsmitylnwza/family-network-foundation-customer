@@ -18,7 +18,7 @@ export default function SectionActivitiesMark() {
         size={12}
       >
         <Typography
-          variant='h6'
+          variant='h5'
           textAlign='center'
           fontWeight={700}
           gutterBottom

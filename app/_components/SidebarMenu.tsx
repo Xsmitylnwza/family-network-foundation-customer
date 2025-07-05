@@ -67,7 +67,7 @@ export default function SidebarMenu({ isOpen, onClose }: SidebarMenuProps) {
             onClick={onClose}
           >
             <Typography
-              variant='h6'
+              variant='h5'
               sx={{
                 color: pathname === item.href ? 'secondary.main' : 'inherit',
                 py: 1.5,
@@ -84,7 +84,7 @@ export default function SidebarMenu({ isOpen, onClose }: SidebarMenuProps) {
       </Box>
 
       <Box sx={{ mt: 'auto' }}>
-        <Typography variant='h6' sx={{ mb: 2, fontWeight: 700 }}>
+        <Typography variant='h5' sx={{ mb: 2, fontWeight: 700 }}>
           ช่องทางข้อมูลข่าวสาร
         </Typography>
         <Divider sx={{ my: 2, borderColor: 'secondary.main' }} />

@@ -56,7 +56,7 @@ export default function SectionTypeFamily() {
         </Box>
       </Grid>
       <Grid size={12}>
-        <Typography variant='h6' fontWeight={700} gutterBottom>
+        <Typography variant='h5' fontWeight={700} gutterBottom>
           “เครือข่ายครอบครัว <br />
           รวมพลังแตกต่าง <br />
           สร้างสังคมที่เข้าใจกัน”
