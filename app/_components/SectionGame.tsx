@@ -12,7 +12,7 @@ export default function SectionGame() {
       justifyContent='space-between'
       size={12}
       minHeight={{ xs: 'max-content' }}
-      maxHeight={{ xs: '100vh', md: '882px' }}
+      maxHeight={{ md: '882px' }}
     >
       <Grid maxWidth={'1440px'} mx='auto' container size={12} spacing={4}>
         <Grid

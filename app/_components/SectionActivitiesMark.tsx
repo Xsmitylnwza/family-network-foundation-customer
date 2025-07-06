@@ -9,7 +9,7 @@ export default function SectionActivitiesMark() {
         background: GRADIENT_BG,
       }}
       minHeight={{ xs: 'max-content' }}
-      maxHeight={{ xs: '100vh', md: '882px' }}
+      maxHeight={{ md: '882px' }}
       container
     >
       <Grid

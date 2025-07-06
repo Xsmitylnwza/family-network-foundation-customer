@@ -12,7 +12,7 @@ export default function HeaderBar() {
         bgcolor='secondary.main'
         alignItems='center'
         px={2}
-        size={{ xs: 12, md: 5 }}
+        size={{ xs: 12, md: 'grow' }}
       >
         <Typography variant='subtitle2' color='white'>
           มูลนิธิเครือข่ายครอบครัว
@@ -31,7 +31,7 @@ export default function HeaderBar() {
             md: 'flex',
           },
         }}
-        size={{ md: 7 }}
+        size={{ md: 'auto' }}
       >
         {SOCIAL_LINKS.map((link) => (
           <Box display='flex' alignItems='center' gap={2} key={link.href}>

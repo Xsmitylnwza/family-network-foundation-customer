@@ -47,7 +47,7 @@ export default function SectionTypeFamily() {
       alignItems='center'
       spacing={4}
       minHeight={{ xs: 'max-content' }}
-      maxHeight={{ xs: '100vh', md: '882px' }}
+      maxHeight={{ md: '882px' }}
       maxWidth={'1440px'}
       mx='auto'
     >
