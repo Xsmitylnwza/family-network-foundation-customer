@@ -34,10 +34,12 @@ export default function RootLayout({ children }: Props) {
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Grid container>
-              <Grid size={12}>
+              <Grid size={12} mx='auto'>
                 <HeaderBar />
                 <Navbar />
+
                 {children}
+
                 <Footer />
               </Grid>
             </Grid>

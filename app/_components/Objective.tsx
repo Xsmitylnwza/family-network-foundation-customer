@@ -27,7 +27,7 @@ function Objective({ index, title, description }: Props) {
           fontWeight: 600,
         }}
       >
-        <Typography variant='h5' color='white'>
+        <Typography variant='h2' color='white'>
           {index}
         </Typography>
       </Box>

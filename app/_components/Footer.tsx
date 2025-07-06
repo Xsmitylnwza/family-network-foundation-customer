@@ -7,6 +7,7 @@ import {
   LOCATION_INFO,
   SOCIAL_LINKS,
 } from '@/app/const/constants';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -17,49 +18,57 @@ export default function Footer() {
         sx={{
           background: GRADIENT_BG,
         }}
-        display='flex'
-        flexDirection='column'
-        gap={2}
         size={12}
+        container
       >
-        <Typography variant='h5' fontWeight={700} gutterBottom>
-          มูลนิธิเครือข่ายครอบครัว
-        </Typography>
-        <Grid container size={12}>
-          {SOCIAL_LINKS.map((link) => (
-            <IconButton key={link.href}>
-              <Image
-                src={link.icon.src}
-                alt={link.title}
-                width={24}
-                height={24}
-              />
-            </IconButton>
-          ))}
-        </Grid>
-        <Typography variant='subtitle2' gutterBottom>
-          {LOCATION_INFO}
-        </Typography>
-        <Grid container>
-          <Grid size={12}>
-            <Typography variant='h5' fontWeight={700} gutterBottom>
-              ข้อมูลติดต่อ
-            </Typography>
-          </Grid>
-          <Grid size={12}>
-            <Box display='flex' alignItems='center' gap={2}>
-              {CONTACT_INFO.map((info) => (
-                <Box key={info.href} display='flex' alignItems='center' gap={2}>
+        <Grid size={{ xs: 12, md: 3 }} container spacing={2}>
+          <Typography variant='h2' fontWeight={700} gutterBottom>
+            มูลนิธิเครือข่ายครอบครัว
+          </Typography>
+          <Grid container size={12}>
+            {SOCIAL_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+                target='_blank'
+              >
+                <IconButton key={link.href}>
                   <Image
-                    src={info.icon.src}
-                    alt={info.title}
+                    src={link.icon.src}
+                    alt={link.title}
                     width={24}
                     height={24}
                   />
-                  <Typography variant='subtitle2'>{info.title}</Typography>
-                </Box>
-              ))}
-            </Box>
+                </IconButton>
+              </Link>
+            ))}
+          </Grid>
+          <Typography variant='subtitle1' gutterBottom>
+            {LOCATION_INFO}
+          </Typography>
+        </Grid>
+        <Grid
+          size={{ xs: 12, md: 2 }}
+          height='max-content'
+          container
+          spacing={2}
+        >
+          <Typography variant='h2' fontWeight={700}>
+            ข้อมูลติดต่อ
+          </Typography>
+          <Grid size={12} container>
+            {CONTACT_INFO.map((info) => (
+              <Box key={info.href} display='flex' alignItems='center' gap={2}>
+                <Image
+                  src={info.icon.src}
+                  alt={info.title}
+                  width={24}
+                  height={24}
+                />
+                <Typography variant='subtitle2'>{info.title}</Typography>
+              </Box>
+            ))}
           </Grid>
         </Grid>
       </Grid>

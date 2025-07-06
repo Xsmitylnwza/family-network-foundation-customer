@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import mockCardImage from '@/public/showCaseMock/img-card.svg';
-import { Box } from '@mui/material';
+import { Box, SxProps } from '@mui/material';
 
-export default function AliveLogo() {
+interface Props {
+  sx?: SxProps;
+}
+
+export default function AliveLogo({ sx }: Props) {
   return (
-    <Box position='relative' minWidth='120px' minHeight='120px'>
+    <Box position='relative' sx={sx}>
       <Image
         src={mockCardImage.src}
         alt='alive'

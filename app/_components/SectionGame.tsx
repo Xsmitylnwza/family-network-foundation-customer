@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, Typography } from '@mui/material';
+import { Grid2 as Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import game from '@/public/game/game-1.png';
@@ -6,31 +6,49 @@ import game from '@/public/game/game-1.png';
 export default function SectionGame() {
   return (
     <Grid
-      px='30px'
+      px={{ xs: '30px', md: '60px' }}
       py='36px'
       spacing={4}
       justifyContent='space-between'
       size={12}
+      minHeight={{ xs: 'max-content' }}
+      maxHeight={{ xs: '100vh', md: '882px' }}
     >
-      <Grid container size={12} spacing={4}>
-        <Grid size={12}>
-          <Typography textAlign='center' variant='h5' fontWeight='bold'>
-            เล่นเกมสนุก <br />
-            พร้อมเรียนรู้ภัยจากบุหรี่ไฟฟ้า
-          </Typography>
-        </Grid>
-        <Box height='300px' width='100%' position='relative'>
-          <Image
-            src={game}
-            alt='game'
-            style={{
-              objectFit: 'cover',
+      <Grid maxWidth={'1440px'} mx='auto' container size={12} spacing={4}>
+        <Grid
+          order={{ xs: 1, md: 2 }}
+          size={{ xs: 12, md: 6 }}
+          container
+          spacing={4}
+        >
+          <Grid size={12} order={{ xs: 1, md: 2 }}>
+            <Typography textAlign='center' variant='h5' fontWeight='bold'>
+              เล่นเกมสนุก <br />
+              พร้อมเรียนรู้ภัยจากบุหรี่ไฟฟ้า
+            </Typography>
+          </Grid>
+          <Grid
+            height='300px'
+            position='relative'
+            size={12}
+            order={{ xs: 2, md: 1 }}
+            sx={{
+              borderRadius: '10px',
+              overflow: 'hidden',
             }}
-            fill
-          />
-        </Box>
+          >
+            <Image
+              src={game}
+              alt='game'
+              style={{
+                objectFit: 'cover',
+              }}
+              fill
+            />
+          </Grid>
+        </Grid>
 
-        <Grid size={12}>
+        <Grid order={{ xs: 2, md: 1 }} size={{ xs: 12, md: 6 }}>
           <iframe
             style={{
               border: 'none',

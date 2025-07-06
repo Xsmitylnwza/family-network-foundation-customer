@@ -14,7 +14,7 @@ export default function SectionAlive() {
         justifyContent='space-between'
         size={12}
       >
-        <Typography variant='h5' fontWeight={700} gutterBottom>
+        <Typography variant='h2' fontWeight={700} gutterBottom>
           “รวมพลังองค์กร สร้างสรรค์เพื่อครอบครัว ไทย”
         </Typography>
         <Box display='flex' flexDirection='column' gap={2}>
@@ -22,7 +22,7 @@ export default function SectionAlive() {
             เราภูมิใจที่ได้ร่วมงานกับพันธมิตรที่หลากหลายซึ่งมีจุดมุ่งหมายเดียวกันนั่นคือการเสริมสร้างความเข้มแข็งให้
             กับครอบครัว และยกระดับคุณภาพชีวิตของเด็กและเยาวชนในสังคมไทย
           </Typography>
-          <AnimationSlideAuto />
+          <AnimationSlideAuto itemsSx={{ width: '100px', height: '100px' }} />
         </Box>
       </Grid>
     </Grid>

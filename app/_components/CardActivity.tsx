@@ -11,8 +11,17 @@ import { ArrowForward } from '@mui/icons-material';
 
 export default function CardActivity() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <Box position='relative' width='100%' height='236px'>
+    <Card
+      sx={{
+        width: '100%',
+        height: { xs: '496px', md: '637px' },
+      }}
+    >
+      <Box
+        position='relative'
+        width='100%'
+        height={{ xs: '236px', md: '300px' }}
+      >
         <Image
           src={mockCardImage.src}
           alt='activity'
@@ -24,10 +33,10 @@ export default function CardActivity() {
         />
       </Box>
       <CardContent>
-        <Typography gutterBottom variant='h5' component='div'>
+        <Typography gutterBottom variant='h2' component='div'>
           หัวข้อกิจกรรมเด่น
         </Typography>
-        <Typography variant='body2' sx={{ color: 'text.secondary' }}>
+        <Typography variant='body1' sx={{ color: 'text.secondary' }}>
           Giving young leaders an opportunity to grow and learn how to lead in
           their communities is critical to the long-term success of t
           curriculum.

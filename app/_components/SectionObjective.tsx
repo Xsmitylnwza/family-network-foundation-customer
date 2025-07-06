@@ -1,24 +1,32 @@
 import { Grid2 as Grid, Typography } from '@mui/material';
 import { GRADIENT_BG } from '../theme';
 import AnimationSlidePagination from './AnimationSlidePagination';
+import Objective from './Objective';
+import { OBJECTIVES } from '../const/constants';
 
 export default function SectionObjective() {
   return (
-    <Grid container>
+    <Grid
+      sx={{
+        background: GRADIENT_BG,
+      }}
+      minHeight={{ xs: 'max-content' }}
+      maxHeight={{ xs: '100vh', md: '882px' }}
+      container
+    >
       <Grid
+        maxWidth={'1440px'}
+        mx='auto'
         px='60px'
         py='36px'
         spacing={4}
-        sx={{
-          background: GRADIENT_BG,
-        }}
         display='flex'
         flexDirection='column'
-        justifyContent='space-between'
+        justifyContent='center'
         size={12}
       >
         <Typography
-          variant='h5'
+          variant='h2'
           textAlign='center'
           fontWeight={700}
           gutterBottom
@@ -32,6 +40,18 @@ export default function SectionObjective() {
           และสังคมที่ไม่ทอดทิ้งกัน
         </Typography>
         <AnimationSlidePagination />
+        <Grid
+          display={{ xs: 'none', md: 'flex' }}
+          container
+          size={12}
+          spacing={12}
+        >
+          {OBJECTIVES.map((objective) => (
+            <Grid size={4} key={objective.index}>
+              <Objective {...objective} />
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
     </Grid>
   );

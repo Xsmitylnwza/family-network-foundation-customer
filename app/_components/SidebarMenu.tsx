@@ -3,9 +3,8 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import CloseIcon from '@mui/icons-material/Close';
-
-import { usePathname } from 'next/navigation';
-import { CONTACT_INFO, MENU_ITEMS, SOCIAL_LINKS } from '../const/constants';
+import { CONTACT_INFO, SOCIAL_LINKS } from '../const/constants';
+import NavigationBar from './NavigationBar';
 
 interface SidebarMenuProps {
   isOpen: boolean;
@@ -13,7 +12,6 @@ interface SidebarMenuProps {
 }
 
 export default function SidebarMenu({ isOpen, onClose }: SidebarMenuProps) {
-  const pathname = usePathname();
   return (
     <Grid
       container
@@ -32,7 +30,8 @@ export default function SidebarMenu({ isOpen, onClose }: SidebarMenuProps) {
         p: 3,
       }}
     >
-      <Box
+      <Grid
+        size={12}
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -56,38 +55,17 @@ export default function SidebarMenu({ isOpen, onClose }: SidebarMenuProps) {
             color: 'text.primary',
           }}
         />
-      </Box>
+      </Grid>
 
-      <Box component='nav' sx={{ mb: 6 }}>
-        {MENU_ITEMS.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            style={{ textDecoration: 'none', color: 'inherit' }}
-            onClick={onClose}
-          >
-            <Typography
-              variant='h5'
-              sx={{
-                color: pathname === item.href ? 'secondary.main' : 'inherit',
-                py: 1.5,
-                fontWeight: 500,
-                '&:hover': {
-                  color: 'secondary.main',
-                },
-              }}
-            >
-              {item.title}
-            </Typography>
-          </Link>
-        ))}
-      </Box>
+      <Grid size={12} component='nav'>
+        <NavigationBar />
+      </Grid>
 
-      <Box sx={{ mt: 'auto' }}>
-        <Typography variant='h5' sx={{ mb: 2, fontWeight: 700 }}>
+      <Grid size={12}>
+        <Typography variant='subtitle1' sx={{ fontWeight: 700 }}>
           ช่องทางข้อมูลข่าวสาร
         </Typography>
-        <Divider sx={{ my: 2, borderColor: 'secondary.main' }} />
+        <Divider sx={{ borderColor: 'secondary.main' }} />
         {SOCIAL_LINKS.map((link) => (
           <Link
             key={link.href}
@@ -151,7 +129,7 @@ export default function SidebarMenu({ isOpen, onClose }: SidebarMenuProps) {
             </Typography>
           </Link>
         ))}
-      </Box>
+      </Grid>
     </Grid>
   );
 }

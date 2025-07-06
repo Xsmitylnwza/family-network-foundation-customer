@@ -39,9 +39,8 @@ export default function BoxSlide() {
   });
 
   return (
-    <Grid container>
+    <Grid size={{ xs: 12, md: 4 }} container>
       <Grid
-        my={1}
         px='25px'
         py='36px'
         height='534px'
@@ -70,12 +69,13 @@ export default function BoxSlide() {
               sx={{
                 width: '100%',
                 flex: 'none',
+                pr: '20px',
               }}
             >
-              <Typography variant='h5' whiteSpace='pre-line'>
+              <Typography variant='h2' whiteSpace='pre-line'>
                 {slide.title}
               </Typography>
-              <Typography variant='body2' mt={2}>
+              <Typography variant='body1' mt={2}>
                 {slide.description}
               </Typography>
             </Grid>

@@ -1,12 +1,19 @@
 'use client';
-import { Box } from '@mui/material';
+import { Box, SxProps } from '@mui/material';
 import React from 'react';
 import AliveLogo from './AliveLogo';
 import { useInfiniteScroll } from '@/app/_hooks/useInfiniteScroll';
 
-export default function AnimationSlideAuto() {
-  const { containerRef, scrollRef } = useInfiniteScroll();
+interface Props {
+  animationDuration?: number;
+  itemsSx?: SxProps;
+}
 
+export default function AnimationSlideAuto({
+  animationDuration = 40,
+  itemsSx,
+}: Props) {
+  const { containerRef, scrollRef } = useInfiniteScroll();
   const items = Array.from({ length: 20 });
   const doubledItems = [...items, ...items];
 
@@ -32,7 +39,7 @@ export default function AnimationSlideAuto() {
         sx={{
           display: 'flex',
           gap: 2,
-          animation: 'scroll 40s linear infinite',
+          animation: `scroll ${animationDuration}s linear infinite`,
           '@keyframes scroll': {
             '0%': {
               transform: 'translateX(0)',
@@ -53,7 +60,7 @@ export default function AnimationSlideAuto() {
               flex: 'none',
             }}
           >
-            <AliveLogo />
+            <AliveLogo sx={itemsSx} />
           </Box>
         ))}
       </Box>
