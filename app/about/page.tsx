@@ -1,7 +1,15 @@
+import HeadSection from '../_components/HeadSection';
+import SectionBanner from '../_components/SectionBanner';
+import SectionCommetee from '../_components/SectionCommetee';
+import SectionHistory from '../_components/SectionHistory';
+
 export default function Home() {
   return (
-    <div>
-      <h1>Coming Soon</h1>
-    </div>
+    <>
+      <HeadSection />
+      <SectionHistory />
+      <SectionCommetee />
+      <SectionBanner />
+    </>
   );
 }

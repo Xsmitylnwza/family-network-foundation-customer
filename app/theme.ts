@@ -20,6 +20,17 @@ let theme = createTheme({
       default: GRADIENT_BG,
     },
   },
+  components: {
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#FF69B4',
+          width: '100%',
+          height: '1px',
+        },
+      },
+    },
+  },
   typography: {
     fontFamily: 'var(--font-noto-sans-thai)',
     h1: {

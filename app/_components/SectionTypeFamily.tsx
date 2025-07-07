@@ -6,14 +6,9 @@ import family1 from '@/public/family/family-1.svg';
 import family2 from '@/public/family/family-2.svg';
 import family3 from '@/public/family/family-3.svg';
 import family4 from '@/public/family/family-4.svg';
+import ContainerSection from './ContainerSection';
 
 const topImages: StaticImageData[] = [family1, family2, family3, family4];
-
-// const bottomImages = [
-//   '/images/meeting1.jpg',
-//   '/images/meeting2.jpg',
-//   '/images/meeting3.jpg',
-// ];
 
 const sectionBlocks = [
   {
@@ -40,17 +35,7 @@ const sectionBlocks = [
 
 export default function SectionTypeFamily() {
   return (
-    <Grid
-      container
-      px='60px'
-      py='36px'
-      alignItems='center'
-      spacing={4}
-      minHeight={{ xs: 'max-content' }}
-      maxHeight={{ md: '882px' }}
-      maxWidth={'1440px'}
-      mx='auto'
-    >
+    <ContainerSection>
       <Grid size={{ xs: 12, md: 6 }} sx={{ order: { xs: 2, md: 1 } }} container>
         <Grid size={12}>
           <Typography
@@ -114,6 +99,6 @@ export default function SectionTypeFamily() {
           ))}
         </Box>
       </Grid>
-    </Grid>
+    </ContainerSection>
   );
 }

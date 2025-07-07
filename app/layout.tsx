@@ -7,6 +7,7 @@ import Footer from './_components/Footer';
 import { Grid2 as Grid } from '@mui/material';
 import Navbar from './_components/Navbar';
 import HeaderBar from './_components/HeaderBar';
+import StickyNabnar from './_components/StickyNabnar';
 
 const notoSansThai = Noto_Sans_Thai({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -37,7 +38,7 @@ export default function RootLayout({ children }: Props) {
               <Grid size={12} mx='auto'>
                 <HeaderBar />
                 <Navbar />
-
+                <StickyNabnar />
                 {children}
 
                 <Footer />
