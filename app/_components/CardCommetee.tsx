@@ -6,10 +6,19 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Image from 'next/image';
-import mockCardImage from '@/public/showCaseMock/img-card.svg';
 import { ArrowForward } from '@mui/icons-material';
 
-export default function CardCommetee() {
+interface CardCommeteeProps {
+  name: string;
+  position: string;
+  image: string;
+}
+
+export default function CardCommetee({
+  name,
+  position,
+  image,
+}: CardCommeteeProps) {
   return (
     <Card
       sx={{
@@ -19,7 +28,7 @@ export default function CardCommetee() {
     >
       <Box position='relative' width='100%' height='422px'>
         <Image
-          src={mockCardImage.src}
+          src={image}
           alt='activity'
           fill
           style={{
@@ -29,11 +38,11 @@ export default function CardCommetee() {
         />
       </Box>
       <CardContent>
-        <Typography gutterBottom variant='h3' component='div'>
-          ชื่อ
+        <Typography variant='subtitle1' component='div'>
+          {name}
         </Typography>
         <Typography variant='body1' sx={{ color: 'text.secondary' }}>
-          ตำแหน่ง
+          {position}
         </Typography>
       </CardContent>
       <CardActions>

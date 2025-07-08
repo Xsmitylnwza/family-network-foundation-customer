@@ -26,13 +26,13 @@ export default function SectionActivitiesMark() {
         </Typography>
       </Grid>
       <Grid container spacing={4} my='40px'>
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Grid height={{ xs: '496px', md: '637px' }} size={{ xs: 12, md: 4 }}>
           <CardActivity />
         </Grid>
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Grid height={{ xs: '496px', md: '637px' }} size={{ xs: 12, md: 4 }}>
           <CardActivity />
         </Grid>
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Grid height={{ xs: '496px', md: '637px' }} size={{ xs: 12, md: 4 }}>
           <CardActivity />
         </Grid>
       </Grid>

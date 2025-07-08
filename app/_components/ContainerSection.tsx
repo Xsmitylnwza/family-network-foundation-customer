@@ -5,15 +5,20 @@ import { GRADIENT_BG } from '../theme';
 interface Props {
   children: React.ReactNode;
   isSecoundColor?: boolean;
+  isMaxContent?: boolean;
 }
 
-export default function ContainerSection({ children, isSecoundColor }: Props) {
+export default function ContainerSection({
+  children,
+  isSecoundColor,
+  isMaxContent = false,
+}: Props) {
   return (
     <Grid
       sx={{
         background: isSecoundColor ? GRADIENT_BG : 'white',
       }}
-      minHeight='80vh'
+      minHeight={isMaxContent ? 'max-content' : '80vh'}
       container
     >
       <Grid

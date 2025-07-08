@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function SectionBanner() {
   return (
-    <ContainerSection>
+    <ContainerSection isMaxContent={true}>
       <Grid justifyContent='center' container size={{ xs: 12, md: 6 }}>
         <Box
           width={{ xs: '310px', md: '310px' }}

@@ -1,7 +1,10 @@
+import HeadSection from '../_components/HeadSection';
+import { HEAD_SECTION_MEDIA } from '../const/constants';
+
 export default function Home() {
   return (
-    <div>
-      <h1>Coming Soon</h1>
-    </div>
+    <>
+      <HeadSection {...HEAD_SECTION_MEDIA} />
+    </>
   );
 }

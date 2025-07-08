@@ -1,8 +1,6 @@
 import { Box, Grid2 as Grid, Typography } from '@mui/material';
 import Image from 'next/image';
-import history1 from '@/public/history/history-1.svg';
-import history2 from '@/public/history/history-2.svg';
-import history3 from '@/public/history/history-3.svg';
+
 import ContainerSection from './ContainerSection';
 
 export default function SectionHistory() {
@@ -28,7 +26,7 @@ export default function SectionHistory() {
             height={{ xs: '126px', md: '241px' }}
           >
             <Image
-              src={history1.src}
+              src='/history/history-1.svg'
               alt='history'
               style={{
                 objectFit: 'contain',
@@ -52,7 +50,7 @@ export default function SectionHistory() {
               height={{ xs: '126px', md: '230px' }}
             >
               <Image
-                src={history2.src}
+                src='/history/history-2.svg'
                 alt='history'
                 style={{
                   objectFit: 'contain',
@@ -66,7 +64,7 @@ export default function SectionHistory() {
               position='relative'
             >
               <Image
-                src={history3.src}
+                src='/history/history-3.svg'
                 alt='history'
                 style={{
                   objectFit: 'cover',

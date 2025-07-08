@@ -1,7 +1,13 @@
+import SectionActivitiesRecent from '../_components/SectionActivitiesRecent';
+import SectionEmployment from '../_components/SectionEmployment';
+import SectionQuickNews from '../_components/SectionQuickNews';
+
 export default function News() {
   return (
-    <div>
-      <h1>Coming Soon</h1>
-    </div>
+    <>
+      <SectionQuickNews />
+      <SectionActivitiesRecent />
+      <SectionEmployment />
+    </>
   );
 }

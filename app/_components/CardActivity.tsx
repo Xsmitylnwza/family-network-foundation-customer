@@ -14,7 +14,7 @@ export default function CardActivity() {
     <Card
       sx={{
         width: '100%',
-        height: { xs: '496px', md: '637px' },
+        height: '100%',
       }}
     >
       <Box

@@ -1,9 +1,15 @@
 import { Divider, Grid2 as Grid, Typography } from '@mui/material';
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { Box } from '@mui/material';
 
-export default function HeadSection() {
+interface Props {
+  title: string;
+  description: string;
+  image: StaticImageData;
+}
+
+export default function HeadSection({ title, description, image }: Props) {
   return (
     <Grid size={{ xs: 12, md: 12 }} container>
       <Grid
@@ -20,7 +26,7 @@ export default function HeadSection() {
         size={12}
       >
         <Image
-          src='/headSection/head-about.svg'
+          src={image}
           alt='head-section'
           fill
           style={{
@@ -46,16 +52,10 @@ export default function HeadSection() {
           }}
         >
           <Typography variant='h1' sx={{ mb: 2 }}>
-            เกี่ยวกับเรา
+            {title}
           </Typography>
           <Divider sx={{ backgroundColor: 'secondary.main' }} />
-          <Typography variant='body1'>
-            มูลนิธิเครือข่ายครอบครัว ก่อตั้งในปี พ.ศ. 2542
-            จากการรวมตัวของกลุ่มพ่อแม่ที่ตั้งใจการปฏิรูปการศึกษา
-            พัฒนาสู่การเป็นองค์กรสาธารณประโยชน์ในปัจจุบัน
-            สร้างความเข้มแข็งให้ครอบครัวไทย
-            ผ่านความร่วมมือและการมีส่วนร่วมจากทุกภาคส่วน
-          </Typography>
+          <Typography variant='body1'>{description}</Typography>
         </Box>
       </Grid>
     </Grid>

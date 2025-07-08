@@ -1,7 +1,10 @@
+import HeadSection from '../_components/HeadSection';
+import { HEAD_SECTION_CONTACT } from '../const/constants';
+
 export default function Contact() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <HeadSection {...HEAD_SECTION_CONTACT} />
+    </>
   );
 }

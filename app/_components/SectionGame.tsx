@@ -1,7 +1,6 @@
 import { Grid2 as Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
-import game from '@/public/game/game-1.png';
 import ContainerSection from './ContainerSection';
 
 export default function SectionGame() {
@@ -30,7 +29,7 @@ export default function SectionGame() {
           }}
         >
           <Image
-            src={game}
+            src={'/game/game-1.png'}
             alt='game'
             style={{
               objectFit: 'cover',

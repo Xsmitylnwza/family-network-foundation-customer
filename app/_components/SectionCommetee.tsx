@@ -2,6 +2,7 @@ import { Grid2 as Grid, Typography } from '@mui/material';
 import React from 'react';
 import CardCommetee from './CardCommetee';
 import ContainerSection from './ContainerSection';
+import { COMMITTEE_MEMBERS } from '../const/constants';
 
 export default function SectionCommetee() {
   return (
@@ -18,9 +19,13 @@ export default function SectionCommetee() {
         </Typography>
       </Grid>
       <Grid container justifyContent='center' size={12}>
-        {Array.from({ length: 7 }).map((_, index) => (
+        {COMMITTEE_MEMBERS.map((member, index) => (
           <Grid key={index} size={{ xs: 12, md: 3 }}>
-            <CardCommetee />
+            <CardCommetee
+              name={member.name}
+              position={member.position}
+              image={member.image}
+            />
           </Grid>
         ))}
       </Grid>

@@ -3,6 +3,30 @@ import tiktokIcon from '@/public/icon/tiktok.svg';
 import youtubeIcon from '@/public/icon/youtube.svg';
 import mailIcon from '@/public/icon/mail.svg';
 
+import headAbout from '@/public/headSection/head-about.svg';
+import headMedia from '@/public/headSection/head-media.svg';
+import headContact from '@/public/headSection/head-contact.svg';
+
+export const HEAD_SECTION_ABOUT = {
+  title: 'เกี่ยวกับเรา',
+  description:
+    'มูลนิธิเครือข่ายครอบครัว ก่อตั้งในปี พ.ศ. 2542 จากการรวมตัวของกลุ่มพ่อแม่ที่ต้องการปฏิรูปการศึกษา พัฒนาสู่การเป็นองค์กรสาธารณกุศลที่มุ่งมั่น สร้างความเข้มแข็งให้ครอบครัวไทย ผ่านความร่วมมือและการมีส่วนร่วมจากทุกภาคส่วน',
+  image: headAbout,
+};
+
+export const HEAD_SECTION_MEDIA = {
+  title: 'สื่อและบทความ',
+  description:
+    'แหล่งรวมสื่อความรู้ บทความ และแนวคิดเพื่อเสริมสร้างครอบครัวที่เข้มแข็งและสังคมที่เกื้อกูลกัน',
+  image: headMedia,
+};
+
+export const HEAD_SECTION_CONTACT = {
+  title: 'ติดต่อเรา',
+  description: '',
+  image: headContact,
+};
+
 export const MENU_ITEMS = [
   { title: 'หน้าแรก', href: '/' },
   { title: 'เกี่ยวกับเรา', href: '/about' },
@@ -76,5 +100,43 @@ export const OBJECTIVES = [
     title: 'ใช้สื่อสร้างสรรค์ พัฒนาเด็กและครอบครัว',
     description:
       'เพื่อใช้สื่อทุกรูปแบบให้เป็นประโยชน์ในการศึกษา พัฒนาเด็กและเครือข่ายครอบครัวในปัจจุบัน',
+  },
+];
+
+export const COMMITTEE_MEMBERS = [
+  {
+    name: 'แพทย์หญิง พรรณพิมล วิปุลากร',
+    position: 'ประธานกรรมการ',
+    image: '/showCaseMock/img-card.svg',
+  },
+  {
+    name: 'นางสาว จิตตินันท์ เดชะคุปต์',
+    position: 'รองประธานกรรมการ',
+    image: '/showCaseMock/img-card.svg',
+  },
+  {
+    name: 'นางสาว พัชรา อุบลสวัสดิ์',
+    position: 'กรรมการและเหรัญญิก',
+    image: '/showCaseMock/img-card.svg',
+  },
+  {
+    name: 'นาง อำนวยพร เอี่ยมพันธ์',
+    position: 'กรรมการและเลขานุการ',
+    image: '/showCaseMock/img-card.svg',
+  },
+  {
+    name: 'นางสาว อุทุมพร อินทจักร์',
+    position: 'กรรมการ',
+    image: '/showCaseMock/img-card.svg',
+  },
+  {
+    name: 'นางสาว ปิยะธิดา ขจรชัยกุล',
+    position: 'กรรมการ',
+    image: '/showCaseMock/img-card.svg',
+  },
+  {
+    name: 'นางสาว กนกวรรณ รับพรดี',
+    position: 'กรรมการ',
+    image: '/showCaseMock/img-card.svg',
   },
 ];
