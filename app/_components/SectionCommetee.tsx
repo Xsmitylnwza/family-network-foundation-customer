@@ -6,7 +6,7 @@ import { COMMITTEE_MEMBERS } from '../const/constants';
 
 export default function SectionCommetee() {
   return (
-    <ContainerSection>
+    <ContainerSection isSecoundColor={true}>
       <Grid size={12}>
         <Typography textAlign='center' variant='h2'>
           ผู้อยู่เบื้องหลังการขับเคลื่อนเพื่อครอบครัว
