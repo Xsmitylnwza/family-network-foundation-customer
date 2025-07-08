@@ -1,4 +1,4 @@
-import { Button, Grid2 as Grid } from '@mui/material';
+import { Button, Grid2 as Grid, Link } from '@mui/material';
 import { Typography } from '@mui/material';
 import ContainerSection from './ContainerSection';
 import CardActivity from './CardActivity';
@@ -24,7 +24,13 @@ export default function SectionActivitiesRecent() {
           </Grid>
         ))}
         <Grid container justifyContent='center' size={12}>
-          <Button variant='contained' color='secondary' size='large'>
+          <Button
+            component={Link}
+            href='/news/activity'
+            variant='contained'
+            color='secondary'
+            size='large'
+          >
             ดูกิจกรรมทั้งหมด
           </Button>
         </Grid>
