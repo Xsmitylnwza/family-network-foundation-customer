@@ -36,6 +36,7 @@ export default function Map() {
     async function init() {
       const L = (await import('leaflet')).default;
       // Fix marker icon paths
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       delete (L.Icon.Default.prototype as any)._getIconUrl;
       L.Icon.Default.mergeOptions({
         iconRetinaUrl:

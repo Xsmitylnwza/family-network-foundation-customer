@@ -5,7 +5,7 @@ import SectionMediaVideo from '../_components/SectionMediaVideo';
 import SectionPhotoImage from '../_components/SectionPhotoImage';
 import { HEAD_SECTION_MEDIA } from '../const/constants';
 
-export default function Home() {
+export default function MediaPage() {
   return (
     <>
       <HeadSection {...HEAD_SECTION_MEDIA} />

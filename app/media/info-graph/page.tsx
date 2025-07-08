@@ -10,7 +10,7 @@ import React from 'react';
 import CardActivity from '@/app/_components/CardActivity';
 import ArrowBackIosNew from '@mui/icons-material/ArrowBackIosNew';
 
-export default function InfoGraph() {
+export default function InfoGraphPage() {
   return (
     <>
       <ContainerSection>
