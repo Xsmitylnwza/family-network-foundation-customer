@@ -1,7 +1,7 @@
 import { Grid2 as Grid, Pagination, Paper, Typography } from '@mui/material';
 import React from 'react';
 import ContainerSection from './ContainerSection';
-import EmploymentDoc from './EmploymentDoc';
+import Article from './Article';
 
 export default function SectionEmployment() {
   return (
@@ -17,7 +17,7 @@ export default function SectionEmployment() {
             <Grid size={12} container spacing={4}>
               <Grid size={12}>
                 <Typography variant='h2' textAlign='center'>
-                  การจัดซื้อจัดจ้าง
+                  บทความ
                 </Typography>
               </Grid>
               <Grid
@@ -30,7 +30,7 @@ export default function SectionEmployment() {
               </Grid>
               {Array.from({ length: 10 }).map((_, index) => (
                 <Grid key={index} size={{ xs: 12, md: 6 }}>
-                  <EmploymentDoc />
+                  <Article />
                 </Grid>
               ))}
               <Grid container justifyContent='center' size={12}>

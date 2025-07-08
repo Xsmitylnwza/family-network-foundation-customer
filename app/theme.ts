@@ -15,7 +15,9 @@ let theme = createTheme({
       light: '#40E0D0',
       dark: '#2C3E50',
       contrastText: '#FFFFFF',
+      100: '#FAFAFA',
     },
+
     background: {
       default: GRADIENT_BG,
     },
