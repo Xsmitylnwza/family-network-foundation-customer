@@ -3,21 +3,23 @@ pipeline {
 
 
     stages {
-        stage('Who am I?') {
-            steps {
-                sh 'echo "Running as $(id -un) (uid=$(id -u)) inside $(hostname)"'
+         stage('Install & Build') {
+            agent {
+                docker {
+                    image 'node:18-alpine'     
+                    args  '-v $HOME/.npm:/home/node/.npm'  
+                }
             }
-        }
-
-        stage('Install Dependencies') {
             steps {
-                sh 'npm install'
-            }
-        }
-
-        stage('Build') {
-            steps {
+                sh 'npm ci'                    
                 sh 'npm run build'
+            }
+        }
+
+        stage('Deploy (local compose build)') {
+            agent { label 'docker' }           
+            steps {
+                sh 'docker compose up -d --build customer'
             }
         }
 
