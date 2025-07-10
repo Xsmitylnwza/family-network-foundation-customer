@@ -17,13 +17,6 @@ pipeline {
         }
 
         stage('Deploy (local compose build)') {
-            agent { label 'docker' }           
-            steps {
-                sh 'docker compose up -d --build customer'
-            }
-        }
-
-        stage('Deploy (local compose build)') {
             steps {
                 script {
                     sh '''
