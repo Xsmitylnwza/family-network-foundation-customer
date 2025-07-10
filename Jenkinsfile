@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'docker' }        
+    agent any      
 
     environment {
         APP_DIR   = '/srv/family-new/family-network-foundation-customer'
@@ -25,7 +25,7 @@ pipeline {
                 '''
             }
         }
-    
+
         stage('Compose Up') {
             steps {
                 sh '''
