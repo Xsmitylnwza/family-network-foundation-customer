@@ -1,43 +1,43 @@
 pipeline {
-    agent any
+    agent { label 'docker' }        
 
+    environment {
+        APP_DIR   = '/srv/family-new/family-network-foundation-customer'
+        STACK_DIR = '/srv/family-new'
+    }
 
     stages {
-         stage('Install & Build') {
-            agent {
-                docker {
-                    image 'node:18-alpine'     
-                    args  '-v $HOME/.npm:/home/node/.npm'  
-                }
-            }
+        stage('Checkout code') {
             steps {
-                sh 'npm ci'                    
-                sh 'npm run build'
+                checkout scm
+                sh '''
+                    git checkout main
+                    git pull origin main
+                '''
             }
         }
 
-        stage('Deploy (local compose build)') {
+        stage('Docker Build') {
             steps {
-                script {
-                    sh '''
-                        set -e
-                        APP_DIR=/srv/family-new/family-network-foundation-customer
-                        STACK_DIR=/srv/family-new
-
-                        mkdir -p $APP_DIR          # Create directory if it doesn't exist
-                        rm -rf $APP_DIR/*
-                        cp -R $WORKSPACE/* $APP_DIR/
-
-                        cd $STACK_DIR
-                        docker compose up -d --build --force-recreate customer
-                    '''
-                }
+                sh '''
+                    docker build -t family-customer:local \
+                      ./family-network-foundation-customer
+                '''
+            }
+        }
+    
+        stage('Compose Up') {
+            steps {
+                sh '''
+                    cd $STACK_DIR
+                    docker compose up -d --force-recreate customer
+                '''
             }
         }
     }
 
     post {
-        success { echo '✅  Build & Deploy (no-DockerHub) successful' }
-        failure { echo '❌  Pipeline failed - check logs for details' }
+        success { echo '✅  Build & Deploy successful' }
+        failure { echo '❌  Pipeline failed - check logs' }
     }
 }
