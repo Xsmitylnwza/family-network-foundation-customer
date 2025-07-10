@@ -20,8 +20,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 sh '''
-                    docker build -t family-customer:local \
-                      ./family-network-foundation-customer
+                    docker build -t family-customer:local
                 '''
             }
         }
