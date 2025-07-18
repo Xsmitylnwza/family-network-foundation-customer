@@ -1,6 +1,6 @@
 import { Grid2 as Grid, Typography } from '@mui/material';
-import CardActivity from './CardActivity';
 import ContainerSection from './ContainerSection';
+import ActivitiesHighLight from './ActivitiesHighLight';
 
 export default function SectionActivitiesMark() {
   return (
@@ -26,15 +26,7 @@ export default function SectionActivitiesMark() {
         </Typography>
       </Grid>
       <Grid container spacing={4} my='40px'>
-        <Grid height={{ xs: '496px', md: '637px' }} size={{ xs: 12, md: 4 }}>
-          <CardActivity />
-        </Grid>
-        <Grid height={{ xs: '496px', md: '637px' }} size={{ xs: 12, md: 4 }}>
-          <CardActivity />
-        </Grid>
-        <Grid height={{ xs: '496px', md: '637px' }} size={{ xs: 12, md: 4 }}>
-          <CardActivity />
-        </Grid>
+        <ActivitiesHighLight />
       </Grid>
     </ContainerSection>
   );
