@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
   images: {
     domains: [
       '27.254.134.159',
@@ -8,14 +9,7 @@ const nextConfig: NextConfig = {
       'i.ytimg.com',
       'example.com',
     ],
-    remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: '27.254.134.159',
-        port: '9000',
-        pathname: '/articles/**',
-      },
-    ],
+    formats: ['image/webp'],
   },
   // Configure webpack to properly handle MUI and other dependencies
   webpack: (config, { isServer }) => {
