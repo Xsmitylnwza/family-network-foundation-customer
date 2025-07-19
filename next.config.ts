@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: [
       '27.254.134.159',
+      'family-network.or.th',
       'upload.wikimedia.org',
       'i.ytimg.com',
       'example.com',
