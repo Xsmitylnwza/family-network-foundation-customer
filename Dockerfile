@@ -1,47 +1,48 @@
-###############################
-# Stage 1 : deps (cache‑friendly)
-###############################
+###########################
+# Stage 1 : deps
+###########################
 FROM node:18-alpine AS deps
 WORKDIR /app
 
-# 1) copy เฉพาะ manifest เพื่อ cache install
-COPY package.json package-lock.json* ./
+# copy lock file + install
+COPY package.json package-lock.json* pnpm-lock.yaml* yarn.lock* ./
+RUN \
+  if [ -f package-lock.json ]; then npm ci --legacy-peer-deps; \
+  elif [ -f pnpm-lock.yaml ];  then npm i -g pnpm && pnpm install --frozen-lockfile; \
+  else yarn install --frozen-lockfile; fi
 
-# 2) ติดตั้ง dependencies
-RUN npm ci --legacy-peer-deps
-
-###############################
+###########################
 # Stage 2 : builder
-###############################
+###########################
 FROM node:18-alpine AS builder
 WORKDIR /app
+# ใช้ root เพื่อจัดการ permission ก่อนค่อยสลับ user ตอน build
+USER root
 
-# 3) ดึง node_modules จาก deps stage
+# ดึง node_modules มาจาก deps
 COPY --from=deps /app/node_modules ./node_modules
+# ดึง source code
+COPY . .
 
-# 4) copy โค้ดทั้งหมด + ตั้งเจ้าของไฟล์ก่อน build
-COPY . .  
+# ใช้ uid/gid เดียวกับ user node เพื่อเลี่ยง permission error
 RUN chown -R node:node /app
-
 USER node
-# 5) สั่ง build
-RUN npm run build
+RUN npm run build        
 
-###############################
+###########################
 # Stage 3 : runtime
-###############################
+###########################
 FROM node:18-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
-
-# 6) ใช้งาน user ปลอดภัย
 USER node
 
-# 7) copy artifacts ที่จำเป็นจริงๆ ไปยัง runtime
-COPY --from=builder --chown=node:node /app/public      ./public
-COPY --from=builder --chown=node:node /app/.next       ./.next
-COPY --from=deps    --chown=node:node /app/node_modules ./node_modules
+# copy ของที่ runtime ต้องใช้จาก builder
+COPY --from=builder --chown=node:node /app/public ./public
+COPY --from=builder --chown=node:node /app/.next ./.next
+COPY --from=builder --chown=node:node /app/node_modules ./node_modules
 COPY --from=builder --chown=node:node /app/package.json ./package.json
+COPY --from=builder --chown=node:node /app/next.config.ts ./next.config.ts
 
 EXPOSE 3000
-CMD ["npm","start"]
+CMD ["npm","start"]     
