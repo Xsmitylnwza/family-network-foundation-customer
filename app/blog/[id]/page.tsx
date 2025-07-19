@@ -1,7 +1,7 @@
 import BtnBackHistory from '@/app/_components/BtnBackHistory';
 import ContainerSection from '@/app/_components/ContainerSection';
 import TimeShow from '@/app/_components/TimeShow';
-import { getBlog } from '@/app/api/fetch';
+import { getBlog } from '@/app/fetch';
 import { Box, Grid2 as Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';

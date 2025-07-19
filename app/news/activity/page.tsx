@@ -4,16 +4,14 @@ import React from 'react';
 import ArrowBackIosNew from '@mui/icons-material/ArrowBackIosNew';
 import ShowAllContent from '@/app/_components/AcivitiesContent';
 
-type SearchParams = {
-  page?: string;
-  size?: string;
-};
+interface Props {
+  searchParams: Promise<{
+    page?: string;
+    size?: string;
+  }>;
+}
 
-export default function Activity({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
+export default async function NewsAcivity({ searchParams }: Props) {
   return (
     <>
       <ContainerSection>
@@ -31,7 +29,7 @@ export default function Activity({
         <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant='h2'>กิจกรรมทั้งหมด</Typography>
         </Grid>
-        <ShowAllContent searchParams={searchParams} type='activity' />
+        <ShowAllContent searchParams={await searchParams} type='activity' />
       </ContainerSection>
     </>
   );

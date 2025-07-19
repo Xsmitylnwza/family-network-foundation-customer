@@ -1,3 +1,11 @@
+import { StaticImageData } from 'next/image';
+
+export type CardActivity = {
+  title: string;
+  description: string;
+  image: StaticImageData;
+};
+
 export interface Activity {
   id: number;
   title: string;

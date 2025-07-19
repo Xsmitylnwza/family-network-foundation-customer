@@ -2,7 +2,7 @@ import { AttachFile } from '@mui/icons-material';
 import { Button, Divider } from '@mui/material';
 import { Grid2 as Grid } from '@mui/material';
 import React from 'react';
-import { Procurement as ProcurementType } from '../api/type';
+import { Procurement as ProcurementType } from '../type';
 import TimeShow from './TimeShow';
 
 export default function Procurement({

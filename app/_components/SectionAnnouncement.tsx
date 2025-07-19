@@ -1,6 +1,6 @@
 import React from 'react';
 import BoxSlide from './BoxSlide';
-import { getAnnoucement } from '@/app/api/fetch';
+import { getAnnoucement } from '@/app/fetch';
 
 interface Props {
   showIntroduce?: boolean;

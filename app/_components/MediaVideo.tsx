@@ -2,7 +2,7 @@
 import { Divider, Grid2 as Grid, Typography } from '@mui/material';
 import VideoTap from './VideoTap';
 import React, { useState } from 'react';
-import { Video } from '../api/type';
+import { Video } from '../type';
 
 interface Props {
   videos: Video[];

@@ -23,13 +23,10 @@ export const useSlideShow = ({
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Calculate slide position including gap
   const getSlidePosition = (index: number) => {
-    // Convert gap pixels to percentage of slide width
     const slideWidth = 100; // 100%
     const position = -(index * slideWidth);
 
-    // No need to calculate gaps here since we're using marginRight in the component
     return position;
   };
 

@@ -4,16 +4,14 @@ import React from 'react';
 import ArrowBackIosNew from '@mui/icons-material/ArrowBackIosNew';
 import ShowAllContent from '@/app/_components/AcivitiesContent';
 
-type SearchParams = {
-  page?: string;
-  size?: string;
-};
+interface Props {
+  searchParams: Promise<{
+    page?: string;
+    size?: string;
+  }>;
+}
 
-export default function InfoGraph({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
+export default async function InfoGraph({ searchParams }: Props) {
   return (
     <>
       <ContainerSection>
@@ -31,7 +29,7 @@ export default function InfoGraph({
         <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant='h2'>อินโฟกราฟิกทั้งหมด</Typography>
         </Grid>
-        <ShowAllContent searchParams={searchParams} type='info-graph' />
+        <ShowAllContent searchParams={await searchParams} type='info-graph' />
       </ContainerSection>
     </>
   );

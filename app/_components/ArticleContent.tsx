@@ -1,8 +1,9 @@
 import { Grid2 as Grid } from '@mui/material';
-import { getArticles } from '../api/fetch';
+import { getArticles } from '../fetch';
 import Article from './Article';
 import { Suspense } from 'react';
 import PaginationParams from './PaginationParams';
+import ComingSoon from './ComingSoon';
 
 interface Props {
   searchParams: {
@@ -18,6 +19,8 @@ export default async function ArticleContent({ searchParams }: Props) {
     page: Number(searchParams?.page) - 1 || 0,
     size: 10,
   });
+
+  if (!articles.length) return <ComingSoon />;
 
   return (
     <>
