@@ -5,14 +5,16 @@ import SectionMediaVideo from '../_components/SectionMediaVideo';
 import SectionPhotoImage from '../_components/SectionPhotoImage';
 import { HEAD_SECTION_MEDIA } from '../constants';
 
-interface Props {
-  searchParams: {
-    page?: string;
-    size?: string;
-  };
-}
+type SearchParams = {
+  page?: string;
+  size?: string;
+};
 
-export default function MediaPage({ searchParams }: Props) {
+export default function MediaPage({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
   return (
     <>
       <HeadSection {...HEAD_SECTION_MEDIA} />

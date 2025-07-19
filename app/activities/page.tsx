@@ -6,13 +6,16 @@ export const metadata: Metadata = {
   description: 'Activities and events from Family Network Foundation',
 };
 
-interface Props {
-  searchParams: {
-    page?: string;
-    size?: string;
-  };
-}
+type SearchParams = {
+  page?: string;
+  size?: string;
+};
 
-export default function ActivitiesPage({ searchParams }: Props) {
+// Remove custom Props interface and use proper typing for Next.js 15.3.5
+export default function ActivitiesPage({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
   return <ShowAllContent type='activity' searchParams={searchParams} />;
 }

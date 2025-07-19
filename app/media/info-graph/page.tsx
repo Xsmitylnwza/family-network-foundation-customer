@@ -4,14 +4,16 @@ import React from 'react';
 import ArrowBackIosNew from '@mui/icons-material/ArrowBackIosNew';
 import ShowAllContent from '@/app/_components/AcivitiesContent';
 
-interface Props {
-  searchParams: {
-    page?: string;
-    size?: string;
-  };
-}
+type SearchParams = {
+  page?: string;
+  size?: string;
+};
 
-export default function InfoGraph({ searchParams }: Props) {
+export default function InfoGraph({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
   return (
     <>
       <ContainerSection>
