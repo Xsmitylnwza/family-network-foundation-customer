@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server';
-import { Annoucement, ResponsePagination } from '@/app/api/type';
+import { Annoucement, Response } from '@/app/type';
 
-export async function GET(): Promise<
-  NextResponse<ResponsePagination<Annoucement[]>>
-> {
+export async function GET(): Promise<NextResponse<Response<Annoucement[]>>> {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/v1/announcements/ordered`,
@@ -15,25 +13,13 @@ export async function GET(): Promise<
       }
     );
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch activities');
-    }
-
     const data = await response.json();
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error fetching activities:', error);
     return NextResponse.json(
       {
-        data: {
-          content: [],
-          pagination: {
-            pageNumber: 0,
-            pageSize: 0,
-            totalElements: 0,
-            totalPages: 0,
-          },
-        },
+        data: [],
         message: 'Failed to fetch activities',
         status: 500,
       },

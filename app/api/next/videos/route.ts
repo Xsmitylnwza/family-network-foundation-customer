@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { Response, Video } from '@/app/api/type';
+import { Response, Video } from '@/app/type';
 
 export async function GET(): Promise<NextResponse<Response<Video[]>>> {
   try {
@@ -12,10 +12,6 @@ export async function GET(): Promise<NextResponse<Response<Video[]>>> {
         cache: 'no-store',
       }
     );
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch videos');
-    }
 
     const data = await response.json();
     return NextResponse.json(data);

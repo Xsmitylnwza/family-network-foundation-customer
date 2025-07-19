@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Article, ResponsePagination } from '@/app/api/type';
+import { Article, ResponsePagination } from '@/app/type';
 
 export async function GET(
   request: NextRequest

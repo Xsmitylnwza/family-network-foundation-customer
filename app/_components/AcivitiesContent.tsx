@@ -1,7 +1,7 @@
 import { Grid2 as Grid } from '@mui/material';
 import React, { Suspense } from 'react';
 import CardActivity from './CardActivity';
-import { getActivities, getInfoGraphs } from '@/app/api/fetch';
+import { getActivities, getInfoGraphs } from '@/app/fetch';
 import PaginationParams from './PaginationParams';
 
 interface Props {

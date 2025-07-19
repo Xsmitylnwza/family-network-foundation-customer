@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Image from 'next/image';
 import { ArrowForward } from '@mui/icons-material';
-import { Activity, InfoGraphic } from '@/app/api/type';
+import { Activity, InfoGraphic } from '@/app/type';
 import mockCardImage from '@/public/showCaseMock/img-card.svg';
 import TimeShow from './TimeShow';
 import Link from 'next/link';

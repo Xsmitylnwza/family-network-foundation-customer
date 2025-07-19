@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import React from 'react';
 import { useInfiniteScroll } from '@/app/_hooks/useInfiniteScroll';
 import CardActivity from './CardActivity';
-import { Activity } from '../api/type';
+import { Activity } from '../type';
 
 interface Props {
   animationDuration?: number;

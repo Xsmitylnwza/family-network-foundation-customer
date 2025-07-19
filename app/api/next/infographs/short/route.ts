@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { Activity, ResponsePagination } from '@/app/api/type';
+import { Activity, ResponsePagination } from '@/app/type';
 
 export async function GET(): Promise<
   NextResponse<ResponsePagination<Activity[]>>
@@ -14,10 +14,6 @@ export async function GET(): Promise<
         cache: 'no-store', // ไม่ cache ที่ route handler เพราะเราจะ cache ที่ component
       }
     );
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch activities');
-    }
 
     const data = await response.json();
     return NextResponse.json(data);

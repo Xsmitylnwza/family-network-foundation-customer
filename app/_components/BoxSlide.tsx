@@ -11,7 +11,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { GRADIENT_BG } from '../theme';
 import { useSlideShow } from '@/app/_hooks/useSlideShow';
-import { Annoucement } from '@/app/api/type';
+import { Annoucement } from '@/app/type';
 import TimeShow from './TimeShow';
 import Link from 'next/link';
 
@@ -21,17 +21,6 @@ interface Props {
 }
 
 export default function BoxSlide({ items, showIntroduce = false }: Props) {
-  const {
-    currentSlide,
-    getSlidePosition,
-    handlePrevSlide,
-    handleNextSlide,
-    stopAutoPlay,
-  } = useSlideShow({
-    totalSlides: items.length || 0,
-    intervalSeconds: 5,
-  });
-
   const introduce: Partial<Annoucement> = {
     title: '“รวมพลังครอบครัว สร้างสังคมอบอุ่นไปด้วยกัน”',
     description:
@@ -39,6 +28,18 @@ export default function BoxSlide({ items, showIntroduce = false }: Props) {
   };
 
   const displayItems = showIntroduce ? [introduce, ...items] : items;
+  const {
+    currentSlide,
+    getSlidePosition,
+    handlePrevSlide,
+    handleNextSlide,
+    stopAutoPlay,
+  } = useSlideShow({
+    totalSlides: displayItems.length || 0,
+    intervalSeconds: 5,
+  });
+
+  if (!displayItems.length) return null;
 
   return (
     <Grid size={{ xs: 12, md: 4 }} container>
@@ -111,7 +112,6 @@ export default function BoxSlide({ items, showIntroduce = false }: Props) {
           alignItems='center'
           size={12}
         >
-          {/* Pagination dots */}
           <Grid display='flex' gap={1}>
             {displayItems?.map((_, index) => (
               <Box
@@ -127,7 +127,6 @@ export default function BoxSlide({ items, showIntroduce = false }: Props) {
             ))}
           </Grid>
 
-          {/* Navigation buttons */}
           <Grid>
             <IconButton
               color='secondary'

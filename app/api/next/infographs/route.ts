@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { InfoGraphic, ResponsePagination } from '@/app/api/type';
+import { InfoGraphic, ResponsePagination } from '@/app/type';
 
 export async function GET(
   request: NextRequest
@@ -18,10 +18,6 @@ export async function GET(
         cache: 'no-store',
       }
     );
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch infoGraphs');
-    }
 
     const data = await response.json();
     return NextResponse.json(data);

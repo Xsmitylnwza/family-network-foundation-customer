@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Blog, Response } from '@/app/api/type';
+import { Blog, Response } from '@/app/type';
 
 export async function GET(
   request: NextRequest,
@@ -17,10 +17,6 @@ export async function GET(
         cache: 'no-store',
       }
     );
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch `activities`');
-    }
 
     const data = await response.json();
     return NextResponse.json(data);

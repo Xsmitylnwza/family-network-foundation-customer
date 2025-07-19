@@ -7,12 +7,12 @@ export const metadata: Metadata = {
 };
 
 interface Props {
-  searchParams: {
+  searchParams: Promise<{
     page?: string;
     size?: string;
-  };
+  }>;
 }
 
-export default function ActivitiesPage({ searchParams }: Props) {
-  return <ShowAllContent type='activity' searchParams={searchParams} />;
+export default async function ActivitiesPage({ searchParams }: Props) {
+  return <ShowAllContent type='activity' searchParams={await searchParams} />;
 }
