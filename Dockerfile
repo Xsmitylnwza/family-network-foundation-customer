@@ -27,7 +27,7 @@ COPY . .
 # ใช้ uid/gid เดียวกับ user node เพื่อเลี่ยง permission error
 RUN chown -R node:node /app
 USER node
-RUN npm run build          # <—  สร้าง .next (standalone หรือ full)
+RUN npm run build        
 
 ###########################
 # Stage 3 : runtime
