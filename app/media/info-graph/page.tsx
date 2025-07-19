@@ -5,13 +5,13 @@ import ArrowBackIosNew from '@mui/icons-material/ArrowBackIosNew';
 import ShowAllContent from '@/app/_components/AcivitiesContent';
 
 interface Props {
-  searchParams: {
+  searchParams: Promise<{
     page?: string;
     size?: string;
-  };
+  }>;
 }
 
-export default function InfoGraph({ searchParams }: Props) {
+export default async function InfoGraph({ searchParams }: Props) {
   return (
     <>
       <ContainerSection>
@@ -29,7 +29,7 @@ export default function InfoGraph({ searchParams }: Props) {
         <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant='h2'>อินโฟกราฟิกทั้งหมด</Typography>
         </Grid>
-        <ShowAllContent searchParams={searchParams} type='info-graph' />
+        <ShowAllContent searchParams={await searchParams} type='info-graph' />
       </ContainerSection>
     </>
   );

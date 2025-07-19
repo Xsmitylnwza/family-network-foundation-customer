@@ -6,20 +6,20 @@ import SectionPhotoImage from '../_components/SectionPhotoImage';
 import { HEAD_SECTION_MEDIA } from '../constants';
 
 interface Props {
-  searchParams: {
+  searchParams: Promise<{
     page?: string;
     size?: string;
-  };
+  }>;
 }
 
-export default function MediaPage({ searchParams }: Props) {
+export default async function MediaPage({ searchParams }: Props) {
   return (
     <>
       <HeadSection {...HEAD_SECTION_MEDIA} />
       <SectionPhotoImage />
       <SectionMediaVideo />
       <SectionInfoGraphRecent />
-      <SectionArticle searchParams={searchParams} />
+      <SectionArticle searchParams={await searchParams} />
     </>
   );
 }

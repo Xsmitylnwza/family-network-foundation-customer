@@ -2,7 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import { Grid2 as Grid } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
-import { Video } from '../api/type';
+import { Video } from '../type';
 
 interface Props {
   id: number;
@@ -11,7 +11,7 @@ interface Props {
   videoUrl: string;
   duration: number;
   onClick: (video: Video) => void;
-  idSelected: number;
+  idSelected: number | undefined;
 }
 
 export default function VideoTap({

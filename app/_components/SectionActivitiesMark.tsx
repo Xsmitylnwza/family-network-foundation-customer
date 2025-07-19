@@ -25,9 +25,8 @@ export default function SectionActivitiesMark() {
           ความร่วมมือ และศรัทธาในคำว่าครอบครัว
         </Typography>
       </Grid>
-      <Grid container spacing={4} my='40px'>
-        <ActivitiesHighLight />
-      </Grid>
+
+      <ActivitiesHighLight />
     </ContainerSection>
   );
 }
